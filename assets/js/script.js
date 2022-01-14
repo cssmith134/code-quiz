@@ -5,12 +5,12 @@ var quizChoice1El = document.getElementById("choice3")
 var quizChoice1El = document.getElementById("choice4")
 var startQuizBtnEl = document.getElementById("startBtn");
 var quizAnswerBtnEl = document.querySelector(".btn");
-
-
-
+var secondQuestionEl = document.getElementById("next")
+var thirdQuestionEl = document.getElementById("next2")
 
 function startGame (event) {
   $("#start-page").remove();
+ 
   var questionTextEl = document.createElement("div");
   var question = quizQuestions[0].question
   questionTextEl.textContent = question
@@ -49,20 +49,97 @@ function startGame (event) {
   $(".btn3").on("click", function() { alert("correct")});
   $(".btn2").on("click", function() { alert("incorrect")});
   $(".btn4").on("click", function() { alert("incorrect")});
-  
 
 };
 
-startQuizBtnEl.addEventListener("click", startGame);
 
-  function nextQuestion (event) {
-      $("#quiz").remove();
-  };
+function secondQuestion (event) {
+  $("#quiz").remove();
+  var questionTextEl = document.createElement("div");
+  var question = quizQuestions[1].question
+  questionTextEl.textContent = question
   
 
+  secondQuestionEl.appendChild(questionTextEl);
  
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[1].choiceA;
+  choiceButtonEl.className = "btn1 btn btn-primary m-2";
 
+  secondQuestionEl.appendChild(choiceButtonEl);
 
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[1].choiceB;
+  choiceButtonEl.className = "btn2 btn btn-primary m-2";
+
+  secondQuestionEl.appendChild(choiceButtonEl);
+
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[1].choiceC;
+  choiceButtonEl.className = "btn3 btn btn-primary m-2";
+
+  secondQuestionEl.appendChild(choiceButtonEl);
+
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[1].choiceD;
+  choiceButtonEl.className = "btn4 btn btn-primary m-2";
+
+  secondQuestionEl.appendChild(choiceButtonEl);
+  $(".btn1").on("click", function() { alert("incorrect")});
+  $(".btn2").on("click", function() { alert("correct")});
+  $(".btn3").on("click", function() { alert("incorrect")});
+  $(".btn4").on("click", function() { alert("incorrect")});
+}
+
+function thirdQuestion (event) {
+  var questionTextEl = document.createElement("div");
+  var question = quizQuestions[2].question
+  questionTextEl.textContent = question
+  
+
+  thirdQuestionEl.appendChild(questionTextEl);
+ 
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[2].choiceA;
+  choiceButtonEl.className = "btn1 btn btn-primary m-2";
+
+  thirdQuestionEl.appendChild(choiceButtonEl);
+
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[2].choiceB;
+  choiceButtonEl.className = "btn2 btn btn-primary m-2";
+
+  thirdQuestionEl.appendChild(choiceButtonEl);
+
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[2].choiceC;
+  choiceButtonEl.className = "btn3 btn btn-primary m-2";
+
+  thirdQuestionEl.appendChild(choiceButtonEl);
+
+  var choiceButtonEl = document.createElement("button");
+  choiceButtonEl.type = "button";
+  choiceButtonEl.innerHTML = quizQuestions[2].choiceD;
+  choiceButtonEl.className = "btn4 btn btn-primary m-2";
+
+  thirdQuestionEl.appendChild(choiceButtonEl);
+  $(".btn1").on("click", function() { alert("incorrect")});
+  $(".btn2").on("click", function() { alert("correct")});
+  $(".btn3").on("click", function() { alert("incorrect")});
+  $(".btn4").on("click", function() { alert("incorrect")});
+}
+
+secondQuestionEl.addEventListener("click", secondQuestion);
+startQuizBtnEl.addEventListener("click", startGame);
+thirdQuestionEl.addEventListener("click", thirdQuestion);
+  
  
 
 
