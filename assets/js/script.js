@@ -7,10 +7,22 @@ var startQuizBtnEl = document.getElementById("startBtn");
 var quizAnswerBtnEl = document.querySelector(".btn");
 var secondQuestionEl = document.getElementById("next")
 var thirdQuestionEl = document.getElementById("next2")
+var quizTimer = document.getElementById("timer");
+
+
+var count = 75;
 
 function startGame (event) {
   $("#start-page").remove();
- 
+
+  
+
+
+ setInterval (function() {
+   count --; 1;
+   quizTimer.textContent = "Time Left: " + count;
+ }, 1000);
+
   var questionTextEl = document.createElement("div");
   var question = quizQuestions[0].question
   questionTextEl.textContent = question
@@ -50,11 +62,14 @@ function startGame (event) {
   $(".btn2").on("click", function() { alert("incorrect")});
   $(".btn4").on("click", function() { alert("incorrect")});
 
+  
+
 };
 
 
 function secondQuestion (event) {
   $("#quiz").remove();
+  
   var questionTextEl = document.createElement("div");
   var question = quizQuestions[1].question
   questionTextEl.textContent = question
@@ -134,11 +149,11 @@ function thirdQuestion (event) {
   $(".btn2").on("click", function() { alert("correct")});
   $(".btn3").on("click", function() { alert("incorrect")});
   $(".btn4").on("click", function() { alert("incorrect")});
-}
+} 
 
 secondQuestionEl.addEventListener("click", secondQuestion);
 startQuizBtnEl.addEventListener("click", startGame);
-thirdQuestionEl.addEventListener("click", thirdQuestion);
+//thirdQuestionEl.addEventListener("click", thirdQuestion);
   
  
 

@@ -10,29 +10,41 @@
 </head>
 <body>
    
-    <div class="container">
+    
         <div id="start-page">
+
+           
             <h1>Code Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit</p>
             <p>Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</p>
+            
         
             <button id="startBtn" type="button" class="btn btn-primary">Start Quiz</button> 
         </div>
 
         <div id="quiz">
+          
+            <div id="timer"> </div>
+            <div class="choice1" id="1" onclick="checkAnswer('1')"></div>
+            <div class="choice1" id="2" onclick="checkAnswer('2')"></div>
+            <div class="choice1" id="3" onclick="checkAnswer('3')"></div>
+            <div class="choice1" id="4" onclick="checkAnswer('4')"></div>
         </div>
 
-        <div id="next">
+       <div id="next">
             <div>
                 <button id="nextQuestion" class="btn btn-warning m-2">NEXT</button>
             </div>
+        </div><div id="next">
+            
+
+        <div id="scoreContainer" style= "display: none;">
+        
+        
+        
         </div>
 
-        <div id="next2">
-           
-        </div>
-
-    </div> 
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
